@@ -2,30 +2,58 @@ const mongoose = require("mongoose");
 
 const orderSchema = new mongoose.Schema({
   shippingInfo: {
-    address: {
-      type: String,
-      required: true,
-    },
-    city: {
+    email: {
       type: String,
       required: true,
     },
 
-    state: {
+    collegeName: {
       type: String,
       required: true,
     },
 
-    country: {
+    teamName: {
       type: String,
       required: true,
     },
-    pinCode: {
+
+    leaderName: {
+      type: String,
+      required: true,
+    },
+
+    contactNo: {
       type: Number,
       required: true,
     },
-    phoneNo: {
-      type: Number,
+
+    instrument: {
+      type: String,
+      required: true,
+    },
+
+    extraRequirments: {
+      type: String,
+      required: true,
+    },
+
+    committeeOne: {
+      type: String,
+      required: true,
+    },
+
+    committeeTwo: {
+      type: String,
+      required: true,
+    },
+
+    committeeThree: {
+      type: String,
+      required: true,
+    },
+
+    accomodation: {
+      type: String,
       required: true,
     },
   },
@@ -70,42 +98,48 @@ const orderSchema = new mongoose.Schema({
   paymentInfo: {
     id: {
       type: String,
-      required: true,
+      // required: true,
     },
     status: {
       type: String,
-      required: true,
+      // required: true,
     },
   },
   paidAt: {
     type: Date,
     required: true,
   },
+
   itemsPrice: {
     type: Number,
     required: true,
     default: 0,
   },
+
   taxPrice: {
     type: Number,
     required: true,
     default: 0,
   },
+
   shippingPrice: {
     type: Number,
     required: true,
     default: 0,
   },
+
   totalPrice: {
     type: Number,
     required: true,
     default: 0,
   },
+
   orderStatus: {
     type: String,
     required: true,
     default: "Processing",
   },
+
   deliveredAt: Date,
   createdAt: {
     type: Date,

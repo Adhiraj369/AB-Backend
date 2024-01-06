@@ -10,6 +10,11 @@ const productSchema = mongoose.Schema({
     type: String,
     required: [true, "Please Enter product Description"],
   },
+  isPay: {
+    type: String,
+    // required: true,
+    default: false
+  },
   price: {
     type: Number,
     required: [true, "Please Enter product Price"],
