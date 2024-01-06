@@ -5,6 +5,18 @@ const connectDatabase = require("./config/database");
 const env = require("dotenv");
 const path = require("path");
 
+const cors = require('cors');
+
+
+app.use(cors());
+const corsOptions = {
+  origin: '',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
 
 // Handling Uncaught Exception
 process.on("uncaughtException", (err) => {
